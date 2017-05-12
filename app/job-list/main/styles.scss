@@ -43,6 +43,7 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
   border: 2px solid #fff;
   border-top-width: 0;
   border-left-width: 0;
+  transition: linear 0.2s;
 }
 
 .arrow_up {
