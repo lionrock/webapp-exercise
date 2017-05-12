@@ -41,6 +41,8 @@ export default class App extends PureComponent {
       const jobs = this.state.jobs;
       jobs[index].subJobs[subIndex].checked = !jobs[index].subJobs[subIndex].checked;
       jobs[index].subJobs = [...jobs[index].subJobs];
+      const checkedLen = jobs[index].subJobs.filter(subJob => subJob.checked).length;
+      jobs[index].checked = checkedLen === jobs[index].subJobs.length;
       this.setState({
         jobs: [...jobs],
       });
