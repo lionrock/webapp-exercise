@@ -79,8 +79,12 @@ export default class App extends PureComponent {
     return (
       <div id="jobListRoot" className={styles.job_list}>
         <div className={styles.container}>
-          <div className={styles.left}>招聘职位</div>
-          <button className={styles.right} onClick={this.clearAll.bind(this)}>清空</button>
+          <div className={styles.left}>
+            <span className={styles.title}>招聘职位</span>
+          </div>
+          <div className={styles.right}>
+            <button className={styles.btn_clear} onClick={this.clearAll.bind(this)}>清空</button>
+          </div>
         </div>
         <List data={this.state.jobs} />
       </div>

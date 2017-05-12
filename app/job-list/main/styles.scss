@@ -37,16 +37,18 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
 
 .arrow {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border: 3px solid #444;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #fff;
   border-top-width: 0;
   border-left-width: 0;
   transform: rotate(45deg);
 }
 
 .job_list {
-  width: 350px;
+  width: 400px;
+  padding: 20px;
+  background-color: #607d8b;
 }
 
 .container {
@@ -60,23 +62,36 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
   padding: 3px;
 }
 
+.title {
+  color: #d5dde2;
+  font-size: large;
+}
+
+.btn_clear {
+  float: right;
+}
+
 .left {
   flex: 8;
+  color: #d5dde2;
 }
 
 .right {
   flex: 2;
   .span_total {
     float: right;
+    color: #fff;
   }
 }
 
-.title {
+.title_depart {
   padding: 0 5px;
+  color: #fff;
   font-weight: 500;
 }
 
 .item {
   margin-left: 5px;
+  color: #d5dde2;
   font-weight: 300;
 }

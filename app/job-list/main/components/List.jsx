@@ -20,7 +20,7 @@ export default class List extends PureComponent {
                 <div className={styles.container}>
                   <div className={styles.left}>
                     <CheckBox checked={v.checked} onChange={this._handleCheckAll.bind(this, index)} />
-                    <span className={styles.title}>{v.depart}</span>
+                    <span className={styles.title_depart}>{v.depart}</span>
                     <div className={styles.arrow}></div>
                   </div>
                   <div className={styles.right}>
