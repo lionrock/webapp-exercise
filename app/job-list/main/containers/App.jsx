@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import List from '../components/List';
 import CounterEmitter from '../components/CountEmitter';
+import styles from '../styles.scss';
 
 // mock data
 const mockData = [
@@ -76,10 +77,11 @@ export default class App extends PureComponent {
   render() {
     console.log(this.state);
     return (
-      <div
-        id="jobListRoot">
-        <div>招聘职位</div>
-        <button onClick={this.clearAll.bind(this)}>清空</button>
+      <div id="jobListRoot" className={styles.job_list}>
+        <div className={styles.container}>
+          <div className={styles.left}>招聘职位</div>
+          <button className={styles.right} onClick={this.clearAll.bind(this)}>清空</button>
+        </div>
         <List data={this.state.jobs} />
       </div>
     );

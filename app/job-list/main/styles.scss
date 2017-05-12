@@ -1,0 +1,82 @@
+$radio-size: 20px !default;
+$checkbox-size: 20px !default;
+$dot-size: 8px !default;
+$border-color: #c0c0c0 !default;
+$main-color: #3e97eb !default;
+$disabled-color: lighten($border-color, 14%) !default;
+$disabled-checked-color: lighten($main-color, 30%) !default;
+
+.checkbox + label {
+  &::before {
+    border-radius: 3px;
+  }
+  &::after {
+    top: 2px;
+    left: 7px;
+    width: 6px;
+    height: 12px;
+    border: 0 solid #fff;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+  }
+}
+.checkbox:checked + label {
+  &::before {
+    border: $main-color;
+    background: $main-color;
+  }
+}
+.checkbox:checked[disabled] + label {
+  &::before {
+    border: $disabled-checked-color;
+    background: $disabled-checked-color;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #444;
+  border-top-width: 0;
+  border-left-width: 0;
+  transform: rotate(45deg);
+}
+
+.job_list {
+  width: 350px;
+}
+
+.container {
+  display: flex;
+  padding: 3px;
+}
+
+.sub_container {
+  display: flex;
+  margin-left: 30px;
+  padding: 3px;
+}
+
+.left {
+  flex: 8;
+}
+
+.right {
+  flex: 2;
+  .span_total {
+    float: right;
+  }
+}
+
+.title {
+  padding: 0 5px;
+  font-weight: 500;
+}
+
+.item {
+  margin-left: 5px;
+  font-weight: 300;
+}
