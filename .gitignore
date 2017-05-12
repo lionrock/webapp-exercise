@@ -13,3 +13,4 @@ app/components/Demo*
 staticweb/demo*
 demo*.spec.js
 Demo*.spec.js
+.idea/
