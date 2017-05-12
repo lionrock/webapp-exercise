@@ -20,12 +20,14 @@ export default class App extends PureComponent {
     super(props);
     this.state = {
       jobs: mockData.map(job => {
-        job.total = 0;
+        let count = 0;
         job.checked = false;
         job.subJobs = job.subJobs.map(subItem => {
           subItem.checked = false;
+          count += subItem.total;
           return subItem;
         });
+        job.total = count;
         return job;
       }),
     };
