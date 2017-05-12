@@ -24,7 +24,7 @@ export default class List extends PureComponent {
                     <div className={styles.arrow}></div>
                   </div>
                   <div className={styles.right}>
-                    <span className={styles.span_total}>{v.total}</span>
+                    <span className={[styles.span_total, styles.badge].join(' ')}>{v.total}</span>
                   </div>
                 </div>
                 <ListItems items={v.subJobs} index={index} />

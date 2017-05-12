@@ -78,10 +78,18 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
 
 .right {
   flex: 2;
+
   .span_total {
     float: right;
+    padding: 0 10px;
     color: #fff;
   }
+}
+
+.badge {
+  padding: 2px 10px;
+  border-radius: 50px;
+  background-color: #516a76;
 }
 
 .title_depart {
