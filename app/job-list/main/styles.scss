@@ -35,6 +35,7 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
   }
 }
 
+// 箭头
 .arrow {
   display: inline-block;
   width: 6px;
@@ -42,24 +43,34 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
   border: 2px solid #fff;
   border-top-width: 0;
   border-left-width: 0;
+}
+
+.arrow_up {
+  @extend .arrow;
+  transform: rotate(225deg);
+}
+
+.arrow_down {
+  @extend .arrow;
   transform: rotate(45deg);
 }
 
+// JobList组件
 .job_list {
   width: 400px;
   padding: 20px;
   background-color: #607d8b;
 }
 
+// flex容器
 .container {
   display: flex;
   padding: 3px;
 }
 
 .sub_container {
-  display: flex;
+  @extend .container;
   margin-left: 30px;
-  padding: 3px;
 }
 
 .title {
@@ -67,6 +78,7 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
   font-size: large;
 }
 
+// 清除按钮
 .btn_clear {
   float: right;
 }

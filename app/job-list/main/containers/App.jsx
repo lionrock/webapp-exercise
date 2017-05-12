@@ -23,6 +23,7 @@ export default class App extends PureComponent {
       jobs: mockData.map(job => {
         let count = 0;
         job.checked = false;
+        job.collapsed = false;
         job.subJobs = job.subJobs.map(subItem => {
           subItem.checked = false;
           count += subItem.total;
@@ -36,7 +37,7 @@ export default class App extends PureComponent {
 
   componentDidMount() {
     CounterEmitter.addListener('checkOne', (index, subIndex) => {
-      console.log(`CheckOne: ${index} - ${subIndex}`);
+      // console.log(`CheckOne: ${index} - ${subIndex}`);
       const jobs = this.state.jobs;
       jobs[index].subJobs[subIndex].checked = !jobs[index].subJobs[subIndex].checked;
       jobs[index].subJobs = [...jobs[index].subJobs];
@@ -46,7 +47,7 @@ export default class App extends PureComponent {
     });
 
     CounterEmitter.addListener('checkAll', (index) => {
-      console.log(`CheckAll: ${index}`);
+      // console.log(`CheckAll: ${index}`);
       const jobs = this.state.jobs;
       const job = jobs[index];
       jobs[index].subJobs = job.subJobs.map(subJob => {
@@ -54,6 +55,15 @@ export default class App extends PureComponent {
         return subJob;
       });
       jobs[index].checked = !job.checked;
+      this.setState({
+        jobs: [...jobs],
+      });
+    });
+
+    CounterEmitter.addListener('collapse', (index) => {
+      const jobs = this.state.jobs;
+      const job = jobs[index];
+      jobs[index].collapsed = !job.collapsed;
       this.setState({
         jobs: [...jobs],
       });
