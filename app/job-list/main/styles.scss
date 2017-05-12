@@ -44,6 +44,7 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
   border-top-width: 0;
   border-left-width: 0;
   transition: linear 0.2s;
+  cursor: pointer;
 }
 
 .arrow_up {
@@ -72,6 +73,18 @@ $disabled-checked-color: lighten($main-color, 30%) !default;
 .sub_container {
   @extend .container;
   margin-left: 30px;
+}
+
+.panel {
+  overflow: hidden;
+  height: 100px;
+  transition: 1s ease-in-out;
+}
+
+.panel_hidden {
+  @extend .panel;
+  height: 0;
+  transition: 1s ease-in-out;
 }
 
 .title {

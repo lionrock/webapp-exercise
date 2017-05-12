@@ -85,7 +85,6 @@ export default class App extends PureComponent {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div id="jobListRoot" className={styles.job_list}>
         <div className={styles.container}>

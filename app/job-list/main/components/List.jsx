@@ -18,20 +18,22 @@ export default class List extends PureComponent {
     return (
       <div>
         {
-          jobList.map((v, index) => {
+          jobList.map((job, index) => {
             return (
               <div key={index}>
                 <div className={styles.container}>
                   <div className={styles.left}>
-                    <CheckBox checked={v.checked} onChange={this._handleCheckAll.bind(this, index)} />
-                    <span className={styles.title_depart}>{v.depart}</span>
-                    <div className={v.collapsed ? styles.arrow_up : styles.arrow_down} onClick={this._handleCollapse.bind(this, index)}></div>
+                    <CheckBox checked={job.checked} onChange={this._handleCheckAll.bind(this, index)} />
+                    <span className={styles.title_depart}>{job.depart}</span>
+                    <div className={job.collapsed ? styles.arrow_up : styles.arrow_down} onClick={this._handleCollapse.bind(this, index)}></div>
                   </div>
                   <div className={styles.right}>
-                    <span className={[styles.span_total, styles.badge].join(' ')}>{v.total}</span>
+                    <span className={[styles.span_total, styles.badge].join(' ')}>{job.total}</span>
                   </div>
                 </div>
-                { v.collapsed ? '' : <ListItems items={v.subJobs} index={index} /> }
+                <div className={job.collapsed ? [styles.panel, styles.panel_hidden].join(' ') : styles.panel}>
+                  <ListItems items={job.subJobs} index={index} />
+                </div>
               </div>
             );
           })
